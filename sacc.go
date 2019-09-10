@@ -11,6 +11,7 @@ import (
 type SimpleAsset struct {
 }
 
+var i int = 10
 //Init is called during chaincode instantiation to initalize any
 //data. Note that chaincode upgrade also call this function to reset
 //or to migrate data.
@@ -29,6 +30,7 @@ func (t *SimpleAsset) Init(stub shim.ChaincodeStubInterface) peer.Response {
 		return shim.Error(fmt.Sprintf("Failed to create asset : %s", args[0]))
 	}
 	return shim.Success(nil)
+	fmt.Println(i)
 }
 
 //Invoke is called per transaction on the chaincode. Each transaction is
