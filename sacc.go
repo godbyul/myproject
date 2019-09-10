@@ -68,7 +68,7 @@ func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		return "", fmt.Errorf("Failed to set asset: %s", args[0])
 	}
 	return args[1], nil
-	fmt.Println(i)
+
 }
 
 //Get returns the value of the specified asset key
@@ -91,4 +91,5 @@ func main() {
 	if err := shim.Start(new(SimpleAsset)); err != nil {
 		fmt.Printf("Error starting SimpleAsset chaincode: %s", err)
 	}
+	fmt.Println(i)
 }
