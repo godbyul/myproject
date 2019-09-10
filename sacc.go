@@ -12,7 +12,7 @@ type SimpleAsset struct {
 	//me string
 }
 
-//var i int = 10
+var i int = 10
 //Init is called during chaincode instantiation to initalize any
 //data. Note that chaincode upgrade also call this function to reset
 //or to migrate data.
@@ -68,6 +68,7 @@ func set(stub shim.ChaincodeStubInterface, args []string) (string, error) {
 		return "", fmt.Errorf("Failed to set asset: %s", args[0])
 	}
 	return args[1], nil
+	fmt.Println(i)
 }
 
 //Get returns the value of the specified asset key
